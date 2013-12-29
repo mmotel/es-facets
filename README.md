@@ -149,9 +149,9 @@ curl -X POST "http://localhost:9200/data/_search?pretty=true" -d '{ "query": { }
 
 ***Dziesięciu najaktywniejszych użytkowików***
 
-Aggregacja ma policzyć ile akcji wykonał każdy z użytkowników i zwrócić dziesięciu najaktywniejszych.
+Wyszukiwanie fasetowe ma policzyć ile akcji wykonał każdy z użytkowników i zwrócić dziesięciu najaktywniejszych.
 
-####Kod aggregacji
+####Kod zapytania
 
 ```json
 {
@@ -208,7 +208,7 @@ Skrypt: [tutaj](./scripts/facets-1.sh).
 }
 ```
 
-Pełny wynik aggregacji: [tutaj](./data/facets-result-1.json).
+Pełny wynik wyszukiwania fasetowego: [tutaj](./data/facets-result-1.json).
 
 ####Czasy
 
@@ -228,9 +228,9 @@ sys   0m0.012s
 
 ***Aktywność użytkowników według miesięcy***
 
-Aggregacja ma policzyć ile akcji wykonali użytkownicy w ciągu kolejnych miesięcy.
+Wyszukiwanie fasetowe ma policzyć ile akcji wykonali użytkownicy w ciągu kolejnych miesięcy.
 
-####Kod aggregacji
+####Kod zapytania
 
 ```json
 {
@@ -328,7 +328,7 @@ Skrypt: [tutaj](./scripts/facets-2.sh).
 }
 ```
 
-Pełny wynik aggregacji: [tutaj](./data/facets-result-2.json).
+Pełny wynik wyszukiwania fasetowego: [tutaj](./data/facets-result-2.json).
 
 
 ####Czasy
@@ -350,7 +350,7 @@ for(var i = 0; i < entries.length; i++){
 };
 ```
 
-Wynik aggregacji po konwersji dat:
+Wynik wyszukiwania fasetowego po konwersji dat:
 
 ```js
 [ { count: 1,       time: '12.2006' },
