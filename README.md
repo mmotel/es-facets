@@ -117,7 +117,7 @@ split -l 200000 getglue_sample.bulk
 A następnie dokonujemy importu w pętli:
 
 ```sh
-time for i in x*; do curl -s -XPOST   localhost:9200/data/_bulk --data-binary @$i; done
+time for i in x*; do curl -s -XPOST localhost:9200/data/_bulk --data-binary @$i > /dev/null; echo $i; done
 ```
 
 ####Wynik
@@ -137,12 +137,12 @@ Zaimportowało się `19 766 542`. Brakuje `64 758` obiektów. Jak wynika z logu 
 ####Czasy
 
 ```sh
-real  232m8.668s
-user  0m14.270s
-sys   1m10.368s
+real  165m45.252s
+user  0m7.414s
+sys   0m28.627s
 ```
 
-W czasie `232m8.668s` (`~3h52m`) zaimportowało `19 766 542` obiektów. Co daje średnio `~1 419` insertów na sekundę. ***Czemu tak wolno?***
+W czasie `165m45.252s` (`~2h45m`) zaimportowało `19 766 542` obiektów. Co daje średnio `~1 987` insertów na sekundę. ***Czemu (nadal) tak wolno?***
 
 ##Faceted Search
 
